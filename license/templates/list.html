@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static "license/css/jquery.dataTables.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "license/css/bootstrap.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "license/css/dataTables.bootstrap.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "license/css/buttons.dataTables.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "license/css/style.css"%}">
+
+    <title>License tables</title>
+</head>
+
+<style type="text/css">
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+</style>
+
+<body class="container">
+
+<h1 class="text-center">LICENSE DETAILS</h1>
+
+
+<table id="maintable" class="display compact cell-border" cellspacing="0" >
+    <thead>
+    <tr>
+          <th>licensekey</th>
+        <th>resellercompany</th>
+        <th>customercompany</th>
+        <th>purchaseorderno</th>
+      
+        <th>supportstart</th>
+        <th>supportend</th>
+        <th>expirydate</th>
+
+        <th>salesorderno</th>
+        <th>creationtime</th>
+
+
+    </tr>
+    </thead>
+	<tbody>
+	{% for item in objects %}
+    <tr>
+        <td>{{ item.licensekey }}</td>
+        <td>{{ item.resellercompany }}</td>
+        <td>{{ item.customercompany }}</td>
+        <td>{{ item.purchaseorderno }}</td>
+        
+        <td>{{ item.supportstart }}</td>
+    <td>{{ item.supportend }}</td>
+    <td>{{ item.expirydate }}</td>
+    <td>{{ item.salesorderno }}</td>
+        <td>{{ item.creationtime }}</td>
+
+
+
+    </tr>
+    {% endfor %}
+	</tbody>
+    
+    <tfoot style="background-color: #c0c0c0; color: #ffffff; font-size: 0.9em; ">
+    <tr>
+         <th>licensekey</th>
+        <th>resellercompany</th>
+        <th>customercompany</th>
+        <th>purchaseorderno</th>
+
+        <th>supportstart</th>
+        <th>supportend</th>
+        <th>expirydate</th>
+
+        <th>salesorderno</th>
+        <th>creationtime</th>
+    </tr>
+    </tfoot>
+</table>
+
+
+<script type="text/javascript" src="{% static "license/js/jquery-2.2.4.min.js"%}"> </script>
+<script type="text/javascript" src="{% static "license/js/jquery.dataTables.min.js"%}"></script>
+<script type="text/javascript" src="{% static "license/js/dataTables.buttons.min.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/jszip.min.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/pdfmake.min.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/vfs_fonts.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/buttons.html5.min.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/buttons.print.min.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/app.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/jquery.mark.min.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/datatables.mark.js"%}">  </script>
+<script type="text/javascript" src="{% static "license/js/buttons.colVis.min.js"%}">  </script>
+
+<div class="footer">
+  <p>DESIGNED BY VIKASH</p>
+</div>
+
+
+</body>
+
+</html>
