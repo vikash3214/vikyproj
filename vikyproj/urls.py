@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^$', 'license.views.getLicDetails',name='crud'),
 
 
+
     ]
